@@ -1,15 +1,16 @@
 package com.techli.googlepubsub.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/html")
+@RestController
+@RequestMapping("/html")
 public class SubscriberController {
 	
-	@RequestMapping("/pullMessage")
+	@RequestMapping(value = "/pullMessage", method = RequestMethod.GET)
 	public String pullMessagefromTopic() {
-		return "Message pulled success";
+		return "Message pulling successfully";
 	}
-	
 
 }
