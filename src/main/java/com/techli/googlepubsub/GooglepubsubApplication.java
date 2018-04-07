@@ -1,5 +1,7 @@
 package com.techli.googlepubsub;
 
+import java.io.IOException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 public class GooglepubsubApplication {
 	Logger logger = LoggerFactory.getLogger(GooglepubsubApplication.class);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		SpringApplication.run(GooglepubsubApplication.class, args);
 	}
 	
