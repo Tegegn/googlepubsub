@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.techli.googlepubsub.dto.DBResponse;
 import com.techli.googlepubsub.model.QuatSenterez;
 import com.techli.googlepubsub.repository.QuatRepository;
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
 
+@Api(tags = "This Api performs basic crud operation on cloud mysql database", description = "CRUD on DB")
 @RestController
 @RequestMapping("/data")
 public class DataManipulatorController {
@@ -21,6 +25,8 @@ public class DataManipulatorController {
 	@Autowired
 	private QuatRepository repository;
 	
+	@ApiOperation(notes = "Given an id of a record this method fetches the entity from DB", value = "Fetch Data")
+	@ApiResponse(response = QuatSenterez.class, code = 0, message = "Returns the entity saved")
 	@RequestMapping(value="/show", method=RequestMethod.GET)
 	public Optional<QuatSenterez> saveData(@RequestParam int id) {
 		return repository.findById(id);
