@@ -1,4 +1,4 @@
-.class
-.prefs
-.project
-.classpath
+*.class
+*.prefs
+*.project
+*.classpath
